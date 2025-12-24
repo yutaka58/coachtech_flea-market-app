@@ -18,6 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/', [AuthController::class, 'index']);
+
 Route::middleware('auth')->group(function () {
     
 });

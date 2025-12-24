@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class ItemController extends Controller
 {
+    public function index()
+    {
+        return view('index');
+    }
+
     public function getLogin()
     {
         return view('auth.login');

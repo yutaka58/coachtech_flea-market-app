@@ -27,7 +27,7 @@
                 @csrf
                 <div class="login-form__group">
                     <label class="login-form__label" for="email">メールアドレス</label>
-                    <input class="login-form__input" type="mail" name="email" id="email">
+                    <input class="login-form__input" type="email" name="email" id="email">
                 </div>
                 <div class="login-form__group">
                     <label class="login-form__label" for="password">パスワード</label>
