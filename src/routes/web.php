@@ -18,10 +18,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/', [AuthController::class, 'index']);
+Route::post('/login', [ItemController::class, 'login']);
+Route::post('/register', [ItemController::class, 'register']);
 
 Route::middleware('auth')->group(function () {
-    
+    Route::get('/', [AuthController::class, 'index']);
+    Route::post('/mypage/profile', [AuthController::class, 'edit']);
 });
 
-Route::get('login', [ItemController::class, 'getLogin']);
+
