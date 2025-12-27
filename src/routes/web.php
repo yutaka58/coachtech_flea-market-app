@@ -14,16 +14,20 @@ use App\Http\Controllers\ItemController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
+// --- 公開ルート ---
+// ログイン
+Route::get('/login', [ItemController::class, 'getLogin'])->name('login'); // 追加
 Route::post('/login', [ItemController::class, 'login']);
-Route::post('/register', [ItemController::class, 'register']);
 
+// 会員登録
+Route::get('/register', [ItemController::class, 'getRegister']); // 画面表示
+Route::post('/register', [ItemController::class, 'postRegister']); // 保存処理 (名前を変更)
+
+// --- 認証ルート ---
 Route::middleware('auth')->group(function () {
-    Route::get('/', [AuthController::class, 'index']);
-    Route::post('/mypage/profile', [AuthController::class, 'edit']);
+    Route::get('/', [ItemController::class, 'index']); // POSTからGETに修正
+    Route::get('/mypage/profile', [ItemController::class, 'edit']); // 通常表示はGET
 });
 
 
