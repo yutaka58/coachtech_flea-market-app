@@ -27,7 +27,11 @@ Route::post('/register', [ItemController::class, 'postRegister']); // 保存処�
 // --- 認証ルート ---
 Route::middleware('auth')->group(function () {
     Route::get('/', [ItemController::class, 'index']); // POSTからGETに修正
-    Route::get('/mypage/profile', [ItemController::class, 'edit']); // 通常表示はGET
+    // プロフィール画面の「表示」用
+    Route::get('/mypage/profile', [ItemController::class, 'editProfile']); 
+    
+    // プロフィール画面の「更新」用（保存ボタンを押した時）
+    Route::post('/mypage/profile', [ItemController::class, 'updateProfile']);
 });
 
 

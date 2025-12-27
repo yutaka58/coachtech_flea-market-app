@@ -1,6 +1,11 @@
 .header-content {
-    padding: 15px 50px;
+    max-width: 100%;
+    padding: 26px 0 27.5px 50px;
     background-color: black;
+}
+
+.header-content img {
+    width: 339px;
 }
 
 .login-form__content {

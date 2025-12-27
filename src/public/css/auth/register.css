@@ -1,6 +1,16 @@
 .header-content {
-    padding: 15px 50px;
-    background-color: black;
+    display: flex;
+    align-items: center;
+    background-color: #000;
+    /* 背景が黒の場合 */
+}
+
+/* 1. ロゴエリア */
+.header-content img {
+    width: 250px;
+    /* 画像のサイズに合わせて調整 */
+    flex: 1;
+    /* 左側の比率を1にする */
 }
 
 .register-form__content {
